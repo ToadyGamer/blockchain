@@ -15,3 +15,12 @@ Ajoutez votre jeton a metamask et envoyez le a un ami!
 https://solidity-by-example.org/
 
 https://docs.soliditylang.org/en/v0.8.25/
+
+Pour créer un token ERC-20, vous pouvez utiliser OpenZeppelin Contract, une bibliotheque de contats intelligentes open source qui fournit des contrats pres a l'emploi pour le développement de contrats intelligents ethereum.
+https://github.com/OpenZeppelin/openzeppelin-contracts/tree/v5.0.2
+
+- en implementant IERC20
+- en héritant ERC20
+- en créer un contrat from scartch
+
+https://eips.ethereum.org/EIPS/eip-20

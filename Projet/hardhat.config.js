@@ -7,6 +7,8 @@ const { vars } = require("hardhat/config");
 // in its dashboard, and add it to the configuration variables
 const INFURA_API_KEY = vars.get("infuraApiKey");
 
+const ETHERSCAN_API_KEY = vars.get("etherscanApiKey");
+
 // Add your Sepolia account private key to the configuration variables
 // To export your private key from Coinbase Wallet, go to
 // Settings > Developer Settings > Show private key
@@ -21,6 +23,11 @@ module.exports = {
     sepolia: {
       url: `https://sepolia.infura.io/v3/${INFURA_API_KEY}`,
       accounts: [SEPOLIA_PRIVATE_KEY],
+    },
+  },
+  etherscan: {
+    apiKey: {
+      sepolia: ETHERSCAN_API_KEY,
     },
   },
 };
