@@ -1,7 +1,7 @@
 const { buildModule } = require("@nomicfoundation/hardhat-ignition/modules");
 
 const ERCModule = buildModule("ERCModule", (m) => {
-  const ERC = m.contract("ERC20");
+  const ERC = m.contract("contractERC20");
 
   return { ERC };
 });
