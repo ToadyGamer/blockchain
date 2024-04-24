@@ -18,15 +18,14 @@ async function main() {
 
   console.log("Solde du compte :", (await deployer.getBalance()).toString());
 
-  // Déploiement du contrat Token
-  const Token = await ethers.getContractFactory("Token");
-  const token = await Token.deploy();
-  await token.deployed();
+  const Contract = await ethers.getContractFactory("Marriage");
+  const contract = await Contract.deploy();
+  await contract.deployed();
 
-  console.log("Adresse du contrat Token :", token.address); // Ajout du console.log pour afficher l'adresse du contrat
+  console.log("Contrat déployé à l'adresse :", contract.address);
 
   // Sauvegarde des fichiers frontaux
-  saveFrontendFiles(token);
+  saveFrontendFiles(contract);
 }
 
 function saveFrontendFiles(token) {
@@ -48,10 +47,10 @@ function saveFrontendFiles(token) {
     JSON.stringify({ Token: token.address }, undefined, 2)
   );
 
-  const TokenArtifact = artifacts.readArtifactSync("Token");
+  const TokenArtifact = artifacts.readArtifactSync("Marriage");
 
   fs.writeFileSync(
-    path.join(contractsDir, "Token.json"),
+    path.join(contractsDir, "Marriage.json"),
     JSON.stringify(TokenArtifact, null, 2)
   );
 }
