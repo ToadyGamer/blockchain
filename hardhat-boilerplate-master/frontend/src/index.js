@@ -1,5 +1,5 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+import React from "react"; //Responsable de l'interface
+import ReactDOM from "react-dom/client"; //Responsable du DOM (interaction avec la page web)
 import { Dapp } from "./components/Dapp";
 
 // We import bootstrap here, but you can remove if you want

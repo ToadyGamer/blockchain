@@ -12,6 +12,8 @@ Perdre une clef privée c'est ne plus accéder aux données de facon owner
 
 solidity-by-exemple.com
 
+ABI & Adress du contrat necessaire pour ethers. Ils sont créer par hardhat.
+
 ## Définition
 
 NONCE : Permet de garder l'intégriter de la chaine
