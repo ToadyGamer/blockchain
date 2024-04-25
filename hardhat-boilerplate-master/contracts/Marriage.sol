@@ -15,9 +15,9 @@ contract Marriage {
     event Transfer(address indexed _from, address indexed _to, uint256 _value);
 
     // Informations sur le mariage
-    string public weddingDate;
     Child[] public children;
 
+    string public weddingDate;
     string public nameMaryMan;
     string public nameMaryWomen;
 
@@ -44,9 +44,14 @@ contract Marriage {
         children.push(Child(_firstName, _lastName, _age));
     }
 
-    //Creation d'un mariage (a faire avec en object (enfant, mari, marie, date))
-    //TODO
-    
+    //Creation d'un mariage avec les informations du mariage (date, mari, marie)
+    function createMarriage(string memory _weddingDate, string memory _maryMan, string memory _maryWomen) public {
+        require(msg.sender == owner, "Only the owner can create a marriage");
+        weddingDate = _weddingDate;
+        nameMaryMan = _maryMan;
+        nameMaryWomen = _maryWomen;
+    }
+
     //On retourn l'argent utilisé pour le mariage
     function balanceOf(address account) external view returns (uint256) {
         return balances[account];

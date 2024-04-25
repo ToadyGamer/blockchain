@@ -13,6 +13,8 @@ import contractAddress from "../contracts/contract-address.json";
 // logic. They just render HTML.
 import { NoWalletDetected } from "./NoWalletDetected";
 import { ConnectWallet } from "./ConnectWallet";
+import { CreateMarriage } from "./CreateMarriage";
+import { AddChild } from "./AddChild";
 import { Loading } from "./Loading";
 import { Transfer } from "./Transfer";
 import { TransactionErrorMessage } from "./TransactionErrorMessage";
@@ -72,11 +74,15 @@ export class Dapp extends React.Component {
     // clicks a button. This callback just calls the _connectWallet method.
     if (!this.state.selectedAddress) {
       return (
-        <ConnectWallet
-          connectWallet={() => this._connectWallet()}
-          networkError={this.state.networkError}
-          dismiss={() => this._dismissNetworkError()}
-        />
+        <>
+          <CreateMarriage createMarriage={() => this.createMarriage()} />
+          <AddChild addChild={(Child) => this.addChild(Child)} />
+        </>
+        // <ConnectWallet
+        //   connectWallet={() => this._connectWallet()}
+        //   networkError={this.state.networkError}
+        //   dismiss={() => this._dismissNetworkError()}
+        // />
       );
     }
 
@@ -157,6 +163,15 @@ export class Dapp extends React.Component {
         </div>
       </div>
     );
+  }
+
+  createMarriage() {
+    console.log("création d'un marriage");
+  }
+
+  addChild(child) {
+    console.log(child);
+    console.log("Ajout d'un enfant dans un marriage");
   }
 
   componentWillUnmount() {
